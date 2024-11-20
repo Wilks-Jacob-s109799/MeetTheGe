@@ -456,6 +456,8 @@ namespace MeetTheGe
 
     internal class Ge
     {
+        private int power;
+        private double gePct;
         private int hp;
         private static Random random = new Random();
         private static readonly string[] methodsOfAttack = { " launched a pizza onto the face of ", " swangled out ", " screamed and dug a hole under ", " defenestrated ", " screamed about jawn and ate the forehead of ", " perpetuated the study of Quakers and had a Dingo duel with ", " won the Dingo duel against ", " won the Great Amberturian Algo John from ", " super-duper-ultra-mega-giga-great-terrified ", " won the heart of ", " stang out the mind of ", " turned into the supreme overlord and decimated ", " drove over ", " hawackadid ", " became the soldy old yougassey and sold the dead fish to ", " told the Great Jeffamac Jawnery to scweam out of a cannon and fire upon ", " pulled a 360-ultima-xD-true-gamer-double-pantsy noscope on ", " told the Great McFireinagee to incinerate ", " told the Great Hangover McGininin to fly away with ", " bloxted ", " screamed \"&CS\" at ", " underdeminadated ", " told Don von Dragon to fly out of a pinpob at ", " rang the bell and flung it at " };
@@ -494,25 +496,28 @@ namespace MeetTheGe
         public string Name { get; private set; }
         public int Power
         {
-            get => Power;
+            get
+            {
+                return power;
+            }
 
             private set
             {
                 if (value > 0 && value < 25)
                 {
-                    Power = value;
+                    power = value;
                 }
             }
         }
         public double GePercent
         {
-            get => GePercent;
+            get => gePct;
 
             private set
             {
                 if (value > 0 && value <= 100)
                 {
-                    GePercent = value;
+                    gePct = value;
                 }
             }
         }
