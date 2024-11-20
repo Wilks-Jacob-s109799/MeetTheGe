@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -399,6 +400,16 @@ namespace MeetTheGe
                 return;
             Console.WriteLine("What is the name of the new Ge?\nEnter here: ");
             string str2 = Console.ReadLine();
+            if (str2.Equals("mcfire") || str2.Equals("The Great McFireinagee"))
+            {
+                Console.WriteLine("Would you like to add the GREAT MCFIREINAGEE to your roster???\nEnter \"yes\" in all lowercase to continue: ");
+                userInputStr = Console.ReadLine();
+                if (userInputStr.Equals("yes"))
+                {
+                    AddGe(Ge.GreatMcFireinagee());
+                    return;
+                }
+            }
             Console.WriteLine("How powerful is " + str2 + "?");
             int input3 = 0;
             bool successful = false;
@@ -460,7 +471,7 @@ namespace MeetTheGe
         private double gePct;
         private int hp;
         private static Random random = new Random();
-        private static readonly string[] methodsOfAttack = { " launched a pizza onto the face of ", " swangled out ", " screamed and dug a hole under ", " defenestrated ", " screamed about jawn and ate the forehead of ", " perpetuated the study of Quakers and had a Dingo duel with ", " won the Dingo duel against ", " won the Great Amberturian Algo John from ", " super-duper-ultra-mega-giga-great-terrified ", " won the heart of ", " stang out the mind of ", " turned into the supreme overlord and decimated ", " drove over ", " hawackadid ", " became the soldy old yougassey and sold the dead fish to ", " told the Great Jeffamac Jawnery to scweam out of a cannon and fire upon ", " pulled a 360-ultima-xD-true-gamer-double-pantsy noscope on ", " told the Great McFireinagee to incinerate ", " told the Great Hangover McGininin to fly away with ", " bloxted ", " screamed \"&CS\" at ", " underdeminadated ", " told Don von Dragon to fly out of a pinpob at ", " rang the bell and flung it at " };
+        private static readonly string[] methodsOfAttack = { " launched a pizza onto the face of ", " swangled out ", " screamed and dug a hole under ", " defenestrated ", " screamed about jawn and ate the forehead of ", " perpetuated the study of Quakers and had a Dingo duel with ", " won the Dingo duel against ", " won the Great Amberturian Algo John from ", " super-duper-ultra-mega-giga-great-terrified ", " won the heart of ", " stang out the mind of ", " turned into the supreme overlord and decimated ", " drove over ", " hawackadid ", " became the soldy old yougassey and sold the dead fish to ", " told the Great Jeffamac Jawnery to scweam out of a cannon and fire upon ", " pulled a 360-ultima-xD-true-gamer-double-pantsy noscope on ", " told the Great McFireinagee to incinerate ", " told the Great Hangover McGininin to fly away with ", " bloxted ", " screamed \"&CS\" at ", " underdeminadated ", " told Don von Dragon to fly out of a pinpob at ", " rang the bell and flung it at ", " gegegefied ", " went overGe and turned into the Ge von Ge while stepping on ", " went rogue an assassinated ", " told Handro Biggs to steal all the illegal purple cheese from ", " told Landro Biggs to give illegal purple cheese poison from ", " raffulkedud ", " demancipated the Proclamation of 1763 and flew King Henry VIII over ", " dropped a nuke on " };
 
         public Ge()
         {
@@ -490,6 +501,16 @@ namespace MeetTheGe
             GePercent = gePct;
             Type = type;
             CoolScream = scream;
+        }
+
+        public static Ge GreatMcFireinagee()
+        {
+            Ge mcfire = new Ge("The Great McFireinagee", 24, 0.01, "boss", "flaaaaaaAAAAAAAAAAmmmmmmm...")
+            {
+                power = 25,
+                gePct = 0
+            };
+            return mcfire;
         }
 
         public string CoolScream { get; set; }
